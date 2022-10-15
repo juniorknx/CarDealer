@@ -9,6 +9,8 @@ import "swiper/css/navigation";
 export function CarCard() {
     return (
         <div className={styles.sliderContainer}>
+            <h3>Categorias</h3>
+            
             <Swiper
                 spaceBetween={20}
                 slidesPerView={4}

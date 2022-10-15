@@ -69,7 +69,12 @@
 }
 
 .sliderContainer {
-    padding: 2em 1em;
+    padding: 1em 6em;
+}
+
+.sliderContainer > h3 {
+    margin-bottom: 12px;
+    margin-left: 5px;
 }
 
 .slider__Title {
