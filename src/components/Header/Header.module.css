@@ -1,0 +1,33 @@
+header {
+    padding: 2em 9em;
+}
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__container > div > figure > a > img:hover {
+    width: 152px;
+    transform: scale(1.1);
+    transition: 2s;
+}
+
+nav > a {
+    padding: 0em 1.3em;
+    color:var(--gray);
+    font-size: 17.1px;
+    font-weight: 600;
+}
+
+.loginButton {
+    background-color: var(--red);
+    padding: 4px 29px;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.loginButton > img {
+    color: red;
+}

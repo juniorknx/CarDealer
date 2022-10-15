@@ -1,0 +1,83 @@
+.hero__section {
+    padding: 15px 45px;
+    background-color: #F7F7F7;
+}
+
+.call__itens {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.call_cta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation: fadeLeft;
+    animation-duration: 2.1s;
+}
+
+.call_cta>h1 {
+    margin-bottom: 1.5em;
+    font-size: 2.5em;
+}
+
+form>input {
+    width: 100%;
+    border: var(--inputborder);
+    height: 43px;
+    border-radius: 5px;
+}
+
+form>input::placeholder {
+    padding-left: 15px;
+    font-size: 12px;
+}
+
+.search__container>button {
+    background: var(--red);
+    color: #fff;
+    padding: 7px 26px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: 1s;
+}
+
+.search__container>button:hover{
+    background-color: #f3123cb0;
+}
+
+.bg__container > img {
+    width: 100%;
+    height: auto;
+}
+
+/* Animations */
+
+@keyframes fadeLeft {
+    from {
+        opacity: 0;
+        transform: translatex(-35%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateZ(0%);
+    }
+}

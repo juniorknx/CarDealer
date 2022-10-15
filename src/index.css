@@ -8,6 +8,7 @@
 
 :root {
   --red:#f3123c;
+  --buttonHover:#e71e43;
   --gray:#4d4c59;
   --graybg:#DFDBDC;
   --bodybg:#f3f5f8;
@@ -23,4 +24,12 @@ button {
 
 a {
   text-decoration: none;
+}
+
+.swiper-button-next {
+  color: red !important;
+}
+
+.swiper-button-prev {
+  color: red !important;
 }

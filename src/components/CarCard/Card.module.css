@@ -1,0 +1,78 @@
+.cardBg {
+    background-image:linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(20, 18, 19, 0.3)), url('../../assets/images/sedanzin.webp');
+    background-position: center center;
+    background-size: cover;
+    border-radius: 8px;
+    height: 135px;
+    overflow: hidden;
+    padding: 15px 24px;
+    position: relative;
+}
+
+.cardBgSuv {
+    background-image:linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(20, 18, 19, 0.3)), url('../../assets/images/suvs.webp');
+    background-position: center center;
+    background-size: cover;
+    border-radius: 8px;
+    height: 135px;
+    overflow: hidden;
+    padding: 15px 24px;
+    position: relative;
+}
+
+.cardBgHatches {
+    background-image:linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(20, 18, 19, 0.3)), url('../../assets/images/hatches.webp');
+    background-position: center center;
+    background-size: cover;
+    border-radius: 8px;
+    height: 135px;
+    overflow: hidden;
+    padding: 15px 24px;
+    position: relative;
+}
+
+.cardBgPicapes {
+    background-image:linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(20, 18, 19, 0.3)), url('../../assets/images/picapes.webp');
+    background-position: center center;
+    background-size: cover;
+    border-radius: 8px;
+    height: 135px;
+    overflow: hidden;
+    padding: 15px 24px;
+    position: relative;
+}
+
+.cardBgEconomy {
+    background-image:linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(20, 18, 19, 0.3)), url('../../assets/images/economy.webp');
+    background-position: center center;
+    background-size: cover;
+    border-radius: 8px;
+    height: 135px;
+    overflow: hidden;
+    padding: 15px 24px;
+    position: relative;
+}
+
+.cardBgFam {
+    background-image:linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(20, 18, 19, 0.3)), url('../../assets/images/familycar.webp');
+    background-position: center center;
+    background-size: cover;
+    border-radius: 8px;
+    height: 135px;
+    overflow: hidden;
+    padding: 15px 24px;
+    position: relative;
+}
+
+.swiper-button-next {
+    color: red;
+}
+
+.sliderContainer {
+    padding: 2em 1em;
+}
+
+.slider__Title {
+    color: #fff;
+    font-size: 25px;
+}
