@@ -1,16 +1,19 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import styles from './Login.module.css'
+import styles from './cadastro.module.css'
 import { useNavigate } from 'react-router-dom'
 
-export function Login() {
+export function CreateAccount() {
 
     const [formData, setFormData] = useState({
+        name:'',
         email: '',
+        city:'',
+        phone:'',
         password: ''
     })
 
-    const { email, password } = formData
+    const { name, email, city, phone, password } = formData
 
     const navigate = useNavigate();
 
@@ -29,10 +32,21 @@ export function Login() {
     return (
         <>
             <main>
-                <div className={styles.login__Container}>
+                <div className={styles.subscribe__Container}>
                     <div className={styles.form__container}>
                         <form onSubmit={handleSubmitForm}>
-                            <h1>Bem Vindo</h1>
+                            <h1>Crie sua conta</h1>
+                            <div className={styles.formGroup}>
+                                <label>Nome</label>
+                                <input
+                                    type='text'
+                                    id="name"
+                                    value={name}
+                                    onChange={onChange}
+                                    required
+                                />
+                            </div>
+
                             <div className={styles.formGroup}>
                                 <label>E-mail</label>
                                 <input
@@ -40,6 +54,29 @@ export function Login() {
                                     id="email"
                                     value={email}
                                     onChange={onChange}
+                                    required
+                                />
+                            </div>
+
+                            <div className={styles.formGroup}>
+                                <label>Cidade</label>
+                                <input
+                                    type='text'
+                                    id="city"
+                                    value={city}
+                                    onChange={onChange}
+                                    required
+                                />
+                            </div>
+
+                            <div className={styles.formGroup}>
+                                <label>Telefone</label>
+                                <input
+                                    type='text'
+                                    id="phone"
+                                    value={phone}
+                                    onChange={onChange}
+                                    required
                                 />
                             </div>
 
@@ -50,8 +87,11 @@ export function Login() {
                                     id="password"
                                     value={password}
                                     onChange={onChange}
+                                    required
                                 />
                             </div>
+
+                            
 
                             <div className={styles.forgotpass}>
                                 <Link to='/forgotpassword'>
@@ -61,14 +101,10 @@ export function Login() {
 
                             <div className={styles.loginButton}>
                                 <button type='submit'>
-                                    Login
+                                    Criar Conta
                                 </button>
                             </div>
                         </form>
-
-                        <div className={styles.createAccount}>
-                            <span>Ainda não tem uma conta? <Link to="/criar-conta">Criar Conta</Link></span>
-                        </div>
                     </div>
                 </div>
             </main>
