@@ -1,5 +1,6 @@
 header {
-    padding: 2em 9em;
+    padding: 1em 9em;
+    
 }
 
 .header__container {
@@ -8,10 +9,14 @@ header {
     align-items: center;
 }
 
+.header__container > div > figure > a > img{
+    width: 120px;
+}
+
 .header__container > div > figure > a > img:hover {
-    width: 152px;
+    width: 130px;
     transform: scale(1.1);
-    transition: 2s;
+    transition: 0.7s;
 }
 
 nav > a {
