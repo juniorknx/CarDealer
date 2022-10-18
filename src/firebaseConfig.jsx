@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore"
 
 const firebaseConfig = {
-  apiKey:`${process.env.APIKEY}`,
-  authDomain: `${process.env.AUTO_DOMAIN}`,
-  projectId: `${process.env.PROJECT_ID}`,
-  storageBucket: `${process.env.STORAGE_BUCKET}`,
+  apiKey: "AIzaSyASHlNYDgi59U-eVkHfJaMQ4OLK5aN67aE",
+  authDomain: "cardealer-841b0.firebaseapp.com",
+  projectId: "cardealer-841b0",
+  storageBucket: "cardealer-841b0.appspot.com",
   messagingSenderId: "961406267944",
-  appId: `${process.env.APP_ID}`
+  appId: "1:961406267944:web:170b471ece942332047b1d"
 };
 
 // Initialize Firebase
