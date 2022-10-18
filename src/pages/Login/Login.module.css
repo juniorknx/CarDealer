@@ -37,6 +37,7 @@ form > h1 {
     border: var(--inputborder);
     height: 43px;
     border-radius: 5px;
+    padding: 4px 9px;
 }
 
 .formGroup > input:focus {
