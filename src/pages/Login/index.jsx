@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import styles from './Login.module.css'
 import { useNavigate } from 'react-router-dom'
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 export function Login() {
 
@@ -21,9 +22,18 @@ export function Login() {
         }))
     }
 
-    function handleSubmitForm(e) {
+   async function handleSubmitForm(e) {
         e.preventDefault()
-        console.log(formData)
+
+        try {
+            const auth = getAuth()
+            const userCredential = await signInWithEmailAndPassword(auth, email, password)
+            const user = userCredential.user
+            console.log(auth)
+            navigate(`/profile/${auth.currentUser.uid}`)
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     return (
