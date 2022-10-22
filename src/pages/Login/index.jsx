@@ -64,7 +64,7 @@ export function Login() {
                             </div>
 
                             <div className={styles.forgotpass}>
-                                <Link to='/forgotpassword'>
+                                <Link to='/alterar-senha'>
                                     Esqueceu sua senha?
                                 </Link>
                             </div>

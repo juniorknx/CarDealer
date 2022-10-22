@@ -115,15 +115,6 @@ export function CreateAccount() {
                                     required
                                 />
                             </div>
-
-
-
-                            <div className={styles.forgotpass}>
-                                <Link to='/forgotpassword'>
-                                    Esqueceu sua senha?
-                                </Link>
-                            </div>
-
                             <div className={styles.loginButton}>
                                 <button type='submit'>
                                     Criar Conta
