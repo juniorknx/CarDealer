@@ -30,7 +30,7 @@ export function Login() {
             const userCredential = await signInWithEmailAndPassword(auth, email, password)
             const user = userCredential.user
             console.log(auth)
-            navigate(`/profile/${auth.currentUser.uid}`)
+            navigate('/profile')
         } catch (error) {
             console.log(error)
         }

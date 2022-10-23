@@ -3,9 +3,10 @@ import { ToastContainer } from 'react-toastify';
 import { Header } from './components/Header';
 import { CreateAccount } from './pages/Cadastrar';
 import { HomePage } from './pages/Home';
-import {Login} from './pages/Login';
+import { Login } from './pages/Login';
 import { LostPassword } from './pages/LostPassword';
 import { Profile } from './pages/Profile';
+import { PrivateRoute } from './components/PrivateRoute/PrivateRoute'
 
 function App() {
   return (
@@ -16,7 +17,9 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/criar-conta" element={<CreateAccount />} />
-          <Route path="/profile/:userId" element={<Profile />} />
+          <Route path="/profile" element={<PrivateRoute />}>
+            <Route path="/profile" element={<Profile />} />
+          </Route>
           <Route path="/alterar-senha" element={<LostPassword />} />
         </Routes>
       </Router>
