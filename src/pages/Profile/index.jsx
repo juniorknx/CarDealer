@@ -21,6 +21,8 @@ export function Profile() {
         }
     })
 
+    console.log(auth.uid)
+
     useEffect(() => {
         const fetchUserProfile = async () => {
             const docRef = doc(db, "users", auth.currentUser.uid);
@@ -40,6 +42,7 @@ export function Profile() {
     const handleLogout = () => {
         auth.signOut();
         navigate('/login')
+        window.location.reload();
     }
 
     return (

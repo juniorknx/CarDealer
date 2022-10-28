@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import styles from './Login.module.css'
 import { useNavigate } from 'react-router-dom'
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { toast } from 'react-toastify'
 
 export function Login() {
 
@@ -32,6 +33,7 @@ export function Login() {
             console.log(auth)
             navigate('/profile')
         } catch (error) {
+            toast.error('Usuário ou Senha Inválidos')
             console.log(error)
         }
     }
