@@ -1,0 +1,70 @@
+.profile {
+    margin: 0;
+    padding: 1em 8em;
+    display: flex;
+    justify-content: center;
+}
+
+.headerProfile {
+    display: flex;
+    justify-content: center;
+    padding: 3em 0em;
+}
+
+.headerProfile > button {
+    background-color: var(--red);
+    padding: 4px 10px;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+}
+
+.userInfo {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em 0em;
+}
+
+.userWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.userWrapper > label {
+    padding: 2px;
+    position: absolute;
+    margin-top: -15px;
+    background: #fff;
+    margin-left: 6px;
+    font-size: 13px;
+    border-radius: 5px;
+}
+
+.userWrapper > input {
+    width:400px;
+    border: var(--inputborder);
+    height: 41px;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 29px;
+}
+
+.editData {
+    display: flex;
+    justify-content: space-between
+}
+
+.editData > button {
+        background: #22C55E;
+        color: #fff;
+        padding: 7px 26px;
+        font-size: 16px;
+        font-weight: 600;
+        border: none;
+        border-radius: 5px;
+        margin-top: 15px;
+        transition: 1s;
+}
+

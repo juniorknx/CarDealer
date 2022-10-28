@@ -5,6 +5,7 @@ import { Spinner } from '../../components/Spinner';
 import { useEffect, useState } from 'react';
 import { db } from '../../firebaseConfig';
 import { getDoc, doc } from 'firebase/firestore';
+import { toast } from 'react-toastify';
 
 export function Profile() {
     const [loading, setLoading] = useState(true)
@@ -15,13 +16,10 @@ export function Profile() {
     const user = onAuthStateChanged(auth, (user) => {
         if (user) {
             const uid = user.uid
-            console.log(auth.currentUser)
         } else {
             console.log('Usuário não logado!!')
         }
     })
-
-    console.log(auth.uid)
 
     useEffect(() => {
         const fetchUserProfile = async () => {
@@ -32,7 +30,7 @@ export function Profile() {
                 docSnap.exists()
                 setProfile(docSnap.data())
             } catch (error) {
-                console.log('Deu merda, nada encontrado.')
+                toast.error('Nenhum item encontrado.')
             }
             setLoading(false)
         }
@@ -92,7 +90,7 @@ export function Profile() {
                             </div>
 
                             <div className={styles.editData}>
-                                <button onClick={() => navigate('/editar-conta')}>
+                                <button onClick={() => navigate('/profile/editar-conta')}>
                                     Editar Dados
                                 </button>
 
