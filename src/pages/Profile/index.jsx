@@ -39,7 +39,7 @@ export function Profile() {
 
     const handleLogout = () => {
         auth.signOut();
-        navigate('/')
+        navigate('/login')
     }
 
     return (
