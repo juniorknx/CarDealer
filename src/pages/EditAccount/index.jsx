@@ -57,7 +57,6 @@ export function EditProfile() {
         try {
             const userUpdate = doc(db, 'users', auth.currentUser.uid)
             await updateDoc(userUpdate, {
-                ...formData,
                 name,
                 email,
                 city,
@@ -72,7 +71,6 @@ export function EditProfile() {
         }
     }
 
-    console.log(profile)
     return (
         <>
             <main>
