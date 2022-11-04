@@ -9,6 +9,7 @@ import { LostPassword } from './pages/LostPassword';
 import { Profile } from './pages/Profile';
 import { PrivateRoute } from './components/PrivateRoute/PrivateRoute'
 import { EditProfile } from './pages/EditAccount';
+import { Vender } from './pages/Vender';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/profile" element={<PrivateRoute />}>
             <Route path='/profile/editar-conta' element={<EditProfile />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/profile/vender" element={<Vender />} />
           </Route>
           <Route path="/alterar-senha" element={<LostPassword />} />
         </Routes>

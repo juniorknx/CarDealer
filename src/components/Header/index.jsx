@@ -37,7 +37,7 @@ export function Header() {
                             Veículos
                         </Link>
 
-                        <Link to='/vender'>
+                        <Link to='/profile/vender'>
                             Vender
                         </Link>
 
