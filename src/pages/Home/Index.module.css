@@ -56,6 +56,60 @@ form>input::placeholder {
     height: auto;
 }
 
+.carsContainer {
+    padding: 1em 6em;
+}
+
+.cars_wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.card {
+    overflow: hidden;
+    border-radius: 4px;
+    position: relative;
+    display: flex;
+    width: inherit;
+    flex-direction: column;
+    background: white;
+    box-shadow: rgb(158 184 209 / 41%) 0px 2px 9px 0px;
+    width: 265px;
+    min-height: 379px;
+    justify-content: space-between;
+}
+
+.cardTitle {
+    padding: 6px 8px;
+}
+
+.cardTitle > h4 {
+    text-align: start;
+    color: #222222;
+    font-size: 17px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.imgContainer > img {
+    max-width: 100%;
+    height: auto;
+}
+
+.price__box > span {
+    font-size: 22px;
+    padding: 6px 8px;
+    font-weight: 600;
+    color:#434343;
+}
+
+.location__box {
+    font-size: 12px;
+    padding: 6px 8px;
+    border-top: solid 1px #e5e5e5;
+}
+
 /* Animations */
 
 @keyframes fadeLeft {

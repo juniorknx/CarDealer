@@ -106,7 +106,7 @@ export function Vender() {
                         const progress =
                             (snapshot.bytesTransferred / snapshot.totalBytes) * 100
                         console.log('Upload is ' + progress + '% done')
-                        toast(`Upload is ${progress} %done!`)
+                        setLoading(true)
                         switch (snapshot.state) {
                             case 'paused':
                                 console.log('Upload is paused')
@@ -120,6 +120,8 @@ export function Vender() {
                     },
                     (error) => {
                         reject(error)
+                        setLoading(false)
+                        toast.error('Erro ao adicionar imagem!')
                     },
                     () => {
                         // Handle successful uploads on complete
