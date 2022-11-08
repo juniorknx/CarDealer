@@ -1,11 +1,12 @@
 import styles from './Index.module.css'
 import MoreCar from '../../assets/images/cardealer.png'
 import { useState } from 'react'
-import SearchIcon from '../../assets/icons/search-normal.png';
 import { CarCard } from '../../components/CarCard';
 import { collection, query, where, getDocs, limit, orderBy } from "firebase/firestore";
 import { db } from '../../firebaseConfig'
 import { useEffect } from 'react';
+import { FaMapMarkerAlt } from "react-icons/fa";
+import { Card } from '../../components/Card';
 
 export function HomePage() {
 
@@ -65,69 +66,7 @@ export function HomePage() {
 
             <div className={styles.carsContainer}>
                 <div className={styles.cars_wrapper}>
-                    <div className={styles.card}>
-                        <div className={styles.imgContainer}>
-                            <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2022/202210/20221018/toyota-corolla-2.0-xei-16v-flex-4p-automatico-wmimagem14493657038.jpg?s=fill&w=1920&h=1440&q=75" alt="Argo" />
-                            <header className={styles.cardTitle}>
-                                <h4>Fiat Argo</h4>
-                            </header>
-                        </div>
-                        <div className={styles.price__box}>
-                            <span>R$ 45.500,00</span>
-                        </div>
-                        <div className={styles.location__box}>
-                            <span className={styles.location}>Porto Alegre - RS</span>
-                        </div>
-                    </div>
-
-                    {/* CARD 1 */}
-
-                    <div className={styles.card}>
-                        <div className={styles.imgContainer}>
-                            <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2022/202210/20221018/toyota-corolla-2.0-xei-16v-flex-4p-automatico-wmimagem14493657038.jpg?s=fill&w=1920&h=1440&q=75" alt="Argo" />
-                            <header className={styles.cardTitle}>
-                                <h4>Fiat Argo</h4>
-                            </header>
-                        </div>
-                        <div className={styles.price__box}>
-                            <span>R$ 45.500,00</span>
-                        </div>
-                        <div className={styles.location__box}>
-                            <span className={styles.location}>Porto Alegre - RS</span>
-                        </div>
-                    </div>
-
-                    {/* CARD 2 */}
-
-                    <div className={styles.card}>
-                        <div className={styles.imgContainer}>
-                            <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2022/202210/20221018/toyota-corolla-2.0-xei-16v-flex-4p-automatico-wmimagem14493657038.jpg?s=fill&w=1920&h=1440&q=75" alt="Argo" />
-                            <header className={styles.cardTitle}>
-                                <h4>Fiat Argo</h4>
-                            </header>
-                        </div>
-                        <div className={styles.price__box}>
-                            <span>R$ 45.500,00</span>
-                        </div>
-                        <div className={styles.location__box}>
-                            <span className={styles.location}>Porto Alegre - RS</span>
-                        </div>
-                    </div>
-
-                    <div className={styles.card}>
-                        <div className={styles.imgContainer}>
-                            <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2022/202210/20221018/toyota-corolla-2.0-xei-16v-flex-4p-automatico-wmimagem14493657038.jpg?s=fill&w=1920&h=1440&q=75" alt="Argo" />
-                            <header className={styles.cardTitle}>
-                                <h4>Fiat Argo</h4>
-                            </header>
-                        </div>
-                        <div className={styles.price__box}>
-                            <span>R$ 45.500,00</span>
-                        </div>
-                        <div className={styles.location__box}>
-                            <span className={styles.location}>Porto Alegre - RS</span>
-                        </div>
-                    </div>
+                    <Card />
                 </div>
             </div>
         </main>
