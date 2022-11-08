@@ -7,10 +7,13 @@ import { db } from '../../firebaseConfig'
 import { useEffect } from 'react';
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { Card } from '../../components/Card';
+import { Spinner } from '../../components/Spinner'
+import { toast } from 'react-toastify';
 
 export function HomePage() {
-
+    const [loading, setLoading] = useState(true)
     const [search, setSearch] = useState('')
+    const [vehicles, setVehicles] = useState(null)
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -19,18 +22,33 @@ export function HomePage() {
 
     useEffect(() => {
         const getVehicles = async () => {
-            const q = query(collection(db, "vehicles"),
-                orderBy('timestamp', 'desc',),
-                limit(3)
-            );
-            const querySnap = await getDocs(q);
-            querySnap.forEach((doc) => {
-                console.log(doc.id, " ====> ", doc.data())
-            })
+            try {
+                const q = query(collection(db, "vehicles"),
+                    orderBy('timestamp', 'desc',)
+                );
+
+                const querySnap = await getDocs(q);
+                let cars = []
+                querySnap.forEach((doc) => {
+                    return cars.push({
+                        id: doc.id,
+                        data: doc.data()
+                    })
+                })
+                setLoading(false)
+                setVehicles(cars)
+                console.log(vehicles)
+            } catch (error) {
+                toast.error('Falha ao obter Listas.')
+            }
         }
 
         getVehicles()
     }, [])
+
+    if (loading === true) {
+        return <Spinner />
+    }
 
     return (
         <main>
@@ -66,7 +84,22 @@ export function HomePage() {
 
             <div className={styles.carsContainer}>
                 <div className={styles.cars_wrapper}>
-                    <Card />
+                    {loading ? (
+                        <Spinner />
+                    ) : vehicles ? (
+                        vehicles.map((cars) => {
+                            return (
+                                <Card
+                                    key={cars.id}
+                                    image={cars.data.imgUrls[0]}
+                                    alt={cars.data.title}
+                                    title={cars.data.title}
+                                    price={cars.data.price}
+                                    location={cars.data.city}
+                                />
+                            )
+                        })
+                    ) : <div>Nenhum veículo encontrado.</div>}
                 </div>
             </div>
         </main>
