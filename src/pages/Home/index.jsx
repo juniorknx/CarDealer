@@ -46,10 +46,6 @@ export function HomePage() {
         getVehicles()
     }, [])
 
-    if (loading === true) {
-        return <Spinner />
-    }
-
     return (
         <main>
             <div className={styles.hero__section}>
@@ -83,6 +79,7 @@ export function HomePage() {
             <CarCard />
 
             <div className={styles.carsContainer}>
+                <h3>Últimas Ofertas</h3>
                 <div className={styles.cars_wrapper}>
                     {loading ? (
                         <Spinner />

@@ -9,8 +9,7 @@ import { getStorage, ref, uploadBytes, uploadBytesResumable, getDownloadURL } fr
 import { setDoc, doc, serverTimestamp, addDoc, collection } from 'firebase/firestore';
 import { v4 as uuiv4 } from 'uuid'
 import { db } from '../../firebaseConfig';
-
-
+import { BsFillArrowUpCircleFill } from "react-icons/bs";
 
 
 export function Vender() {
@@ -285,7 +284,7 @@ export function Vender() {
 
                             <div className={styles.loginButton}>
                                 <button type='submit'>
-                                    Publicar
+                                    Publicar <BsFillArrowUpCircleFill />
                                 </button>
                             </div>
                         </form>
