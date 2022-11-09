@@ -1,0 +1,157 @@
+.subscribe__Container  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form__container {
+    flex-basis: 400px;
+}
+
+form > h1 {
+    margin: 1em 0px;
+    font-weight: 300;
+    color: var(gray);
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.formGroup > label {
+    color: var(--gray);
+    font-size: 15.2px;
+    margin: 0px 2px;
+    position: absolute;
+    background-color: #fff;
+    margin-top: -11px;
+    margin-left: 8px;
+}
+
+.formGroup {
+    padding: 10px 0px;
+}
+
+.formGroup > input {
+    border: var(--inputborder);
+    height: 43px;
+    border-radius: 5px;
+    padding: 4px 9px;
+}
+
+.formGroup > input:focus {
+    outline: none;
+    border-color:var(--graybg);
+}
+
+.forgotpass {
+    display: flex;
+    justify-content: flex-end;
+    padding: 7px 1px;
+}
+
+.forgotpass > a {
+    color: var(--gray);
+    font-weight: 500;
+    font-size: 12.1px;
+}
+
+.loginButton > button {
+    background: #22C55E;
+    color: #fff;
+    padding: 7px 26px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: 1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginButton > button > svg {
+    margin-left: 11px;
+    font-size: 18.2px;
+}
+
+.createAccount {
+    padding: 20px 1px;
+    display: flex;
+    justify-content: center;
+}
+
+.createAccount > span {
+    color: gray;
+    font-size: 15.1px;
+}
+
+.createAccount > span > a {
+    color: #22C55E;
+    font-weight: 600;
+}
+
+.formButtons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.formButtons > label {
+    color: var(--gray);
+    font-size: 15.2px;
+    margin: 0px 2px;
+    background-color: #fff;
+}
+
+.formButtonActive {
+    background: #22C55E;
+    color: #fff;
+    padding: 7px 26px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    transition: 1s;
+}
+
+.formButton {
+    background: #fff;
+    color: var(--gray);
+    padding: 7px 26px;
+    font-size: 16px;
+    font-weight: 600;
+    border: solid 1px #22C55E;
+    border-radius: 5px;
+    transition: 1s;
+}
+
+
+
+.formGroup > textarea {
+    border: var(--inputborder);
+    height: 100px;
+    border-radius: 5px;
+    padding: 10px 9px;
+}
+
+.formGroup > .formInputFile {
+    border: var(--inputborder);
+    height: 40px;
+    border-radius: 5px;
+    padding: 18px 20px 0px 20px;
+}
+
+.formGroup > .formInputFile::-webkit-file-upload-button {
+    background-color: #00cc66;
+    border: none;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 0.5rem 0.75rem;
+    border-radius: 1rem;
+    margin-right: 1rem;
+    cursor: pointer;
+  }

@@ -1,13 +1,14 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore"
 
+
 const firebaseConfig = {
-  apiKey:`${process.env.APIKEY}`,
-  authDomain: `${process.env.AUTO_DOMAIN}`,
-  projectId: `${process.env.PROJECT_ID}`,
-  storageBucket: `${process.env.STORAGE_BUCKET}`,
-  messagingSenderId: "961406267944",
-  appId: `${process.env.APP_ID}`
+  apiKey: `${process.env.REACT_APP_APIKEY}`,
+  authDomain: `${process.env.REACT_APP_AUTO_DOMAIN}`,
+  projectId: "cardealer-841b0",
+  storageBucket: "cardealer-841b0.appspot.com",
+  messagingSenderId: `${process.env.REACT_APP_MESSAGEID}`,
+  appId: `${process.env.REACT_APP_ID}`
 };
 
 // Initialize Firebase
