@@ -11,6 +11,8 @@ import { PrivateRoute } from './components/PrivateRoute/PrivateRoute'
 import { EditProfile } from './pages/EditAccount';
 import { Vender } from './pages/Vender';
 
+console.log('MERDA DE VARIAVEL ====>', process.env.REACT_APP_APIKEY)
+
 function App() {
   return (
     <>
