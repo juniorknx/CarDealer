@@ -79,7 +79,7 @@ export function HomePage() {
             <CarCard />
 
             <div className={styles.carsContainer}>
-                <h3>Últimas Ofertas</h3>
+                <h2>Últimas Ofertas</h2>
                 <div className={styles.cars_wrapper}>
                     {loading ? (
                         <Spinner />

@@ -69,12 +69,13 @@
 }
 
 .sliderContainer {
-    padding: 1em 6em;
+    padding: 3em 6em;
 }
 
-.sliderContainer > h3 {
+.sliderContainer > h2 {
     margin-bottom: 12px;
     margin-left: 5px;
+    font-size: 27.1px;
 }
 
 .slider__Title {

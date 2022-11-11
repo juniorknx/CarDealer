@@ -60,9 +60,10 @@ form>input::placeholder {
     padding: 1em 6em;
 }
 
-.carsContainer > h3 {
+.carsContainer > h2 {
     margin-bottom: 12px;
     margin-left: 5px;
+    font-size: 27.1px;
 }
 
 

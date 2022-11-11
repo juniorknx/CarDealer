@@ -9,7 +9,7 @@ import "swiper/css/navigation";
 export function CarCard() {
     return (
         <div className={styles.sliderContainer}>
-            <h3>Categorias</h3>
+            <h2>Categorias</h2>
             
             <Swiper
                 spaceBetween={20}
