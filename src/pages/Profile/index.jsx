@@ -4,12 +4,14 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { Spinner } from '../../components/Spinner';
 import { useEffect, useState } from 'react';
 import { db } from '../../firebaseConfig';
-import { getDoc, doc } from 'firebase/firestore';
+import { getDoc, doc, collection, where, orderBy, getDocs, query } from 'firebase/firestore';
 import { toast } from 'react-toastify';
+import { Card } from '../../components/Card';
 
 export function Profile() {
     const [loading, setLoading] = useState(true)
     const [profile, setProfile] = useState(null)
+    const [cars, setCars] = useState(null)
     const navigate = useNavigate()
 
     const auth = getAuth();
@@ -30,11 +32,36 @@ export function Profile() {
                 docSnap.exists()
                 setProfile(docSnap.data())
             } catch (error) {
-                toast.error('Nenhum item encontrado.')
+                toast.error('Erro ao encontrar dados de usuário.')
             }
             setLoading(false)
         }
         fetchUserProfile()
+    }, [])
+
+    //Fetch the cars announced 
+    useEffect(() => {
+        const listingCars = async () => {
+            const listingsRef = collection(db, 'vehicles')
+            const q = query(listingsRef,
+                where('userRef', '==', auth.currentUser.uid),
+                orderBy('timestamp', 'desc')
+            )
+            const querySnap = await getDocs(q)
+            const vehicles = []
+
+            querySnap.forEach((doc) => {
+                return vehicles.push({
+                    id: doc.id,
+                    data: doc.data()
+                })
+            })
+
+            setCars(vehicles)
+            setLoading(false)
+            console.log(cars)
+        }
+        listingCars()
     }, [])
 
     const handleLogout = () => {
@@ -56,37 +83,37 @@ export function Profile() {
                             </div>
 
                             <div className={styles.userInfo}>
-                            <div className={styles.userWrapper}>
+                                <div className={styles.userWrapper}>
                                     <label>Nome</label>
                                     <input type='text'
                                         value={profile.name}
                                         disabled
                                     />
-                               </div>
+                                </div>
 
-                               <div className={styles.userWrapper}>
+                                <div className={styles.userWrapper}>
                                     <label>E-mail</label>
                                     <input type='text'
                                         value={profile.email}
                                         disabled
                                     />
-                               </div>
+                                </div>
 
-                               <div className={styles.userWrapper}>
+                                <div className={styles.userWrapper}>
                                     <label>Cidade</label>
                                     <input type='text'
                                         value={profile.city}
                                         disabled
                                     />
-                               </div>
+                                </div>
 
-                               <div className={styles.userWrapper}>
+                                <div className={styles.userWrapper}>
                                     <label>Telefone</label>
                                     <input type='text'
                                         value={profile.phone}
                                         disabled
                                     />
-                               </div>
+                                </div>
                             </div>
 
                             <div className={styles.editData}>
@@ -95,11 +122,36 @@ export function Profile() {
                                 </button>
 
                                 <button onClick={handleLogout}>
-                                    Sair
+                                    Logout
                                 </button>
                             </div>
                         </div>
                     )}
+                </div>
+
+                <div className={styles.advertsContainer}>
+                    <div>
+                        <h1>Meus Anúncios</h1>
+                    </div>
+
+                    <div className={styles.vehiclesAnnounced}>
+                        {loading ? (
+                            <Spinner />
+                        ) : cars.length > 0 ? (
+                            cars.map((adverts) => {
+                                return (
+                                    <Card
+                                        key={adverts.id}
+                                        image={adverts.data.imgUrls[0]}
+                                        alt={adverts.data.title}
+                                        title={adverts.data.title}
+                                        price={adverts.data.price}
+                                        location={adverts.data.city}
+                                    />
+                                )
+                            })
+                        ) : <div>Nenhum anúncio encontrado.</div>}
+                    </div>
                 </div>
             </main>
         </>
