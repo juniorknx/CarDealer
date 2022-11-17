@@ -10,6 +10,7 @@ import { Profile } from './pages/Profile';
 import { PrivateRoute } from './components/PrivateRoute/PrivateRoute'
 import { EditProfile } from './pages/EditAccount';
 import { Vender } from './pages/Vender';
+import { EditAnuncio } from './pages/EditarAnuncio';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/criar-conta" element={<CreateAccount />} />
           <Route path="/profile" element={<PrivateRoute />}>
             <Route path='/profile/editar-conta' element={<EditProfile />} />
+            <Route path='/profile/editar-anuncio/:carId' element={<EditAnuncio />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/profile/vender" element={<Vender />} />
           </Route>

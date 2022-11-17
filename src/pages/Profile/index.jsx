@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { Spinner } from '../../components/Spinner';
 import { useEffect, useState } from 'react';
 import { db } from '../../firebaseConfig';
-import { getDoc, doc, collection, where, orderBy, getDocs, query } from 'firebase/firestore';
+import { getDoc, doc, collection, where, orderBy, getDocs, query, deleteDoc } from 'firebase/firestore';
 import { toast } from 'react-toastify';
 import { Card } from '../../components/Card';
 
@@ -68,6 +68,17 @@ export function Profile() {
         auth.signOut();
         navigate('/login')
         window.location.reload();
+    }
+
+   const onDelete = async (id) => {
+        if(window.confirm('Excluir anúncio?')){
+            await deleteDoc(doc(db, 'vehicles', id))
+            window.location.reload()
+        }
+    }
+
+    const onEdit = (carId) => {
+        navigate(`/profile/editar-anuncio/${carId}`)
     }
 
     return (
@@ -137,7 +148,7 @@ export function Profile() {
                     <div className={styles.vehiclesAnnounced}>
                         {loading ? (
                             <Spinner />
-                        ) : cars.length > 0 ? (
+                        ) : cars? (
                             cars.map((adverts) => {
                                 return (
                                     <Card
@@ -147,10 +158,12 @@ export function Profile() {
                                         title={adverts.data.title}
                                         price={adverts.data.price}
                                         location={adverts.data.city}
+                                        onEdit={() => onEdit(adverts.id)}
+                                        onDelete={() => onDelete(adverts.id)}
                                     />
                                 )
                             })
-                        ) : <div>Nenhum anúncio encontrado.</div>}
+                        ) : (<div>Nenhum anúncio encontrado.</div>)}
                     </div>
                 </div>
             </main>
