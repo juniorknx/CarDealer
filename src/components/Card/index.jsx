@@ -17,8 +17,12 @@ export function Card({ id, image, title, price, location, onDelete, onEdit }) {
                 <span className={styles.location}>{location}</span>
                 <FaMapMarkerAlt />
             </div>
-            {onEdit && <FaPencilAlt className={styles.editIcon} onClick={() => onEdit(id)} />}
-            {onDelete && <FaTrashAlt className={styles.deleteIcon} onClick={() => onDelete(id)} />}
+            {onEdit && onDelete &&
+                <div className={styles.editButtonsContainer}>
+                    <FaTrashAlt className={styles.deleteIcon} onClick={() => onDelete(id)} />
+                    <FaPencilAlt className={styles.editIcon} onClick={() => onEdit(id)} />
+                </div>
+            }
         </div>
     )
 }

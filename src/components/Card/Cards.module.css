@@ -46,4 +46,17 @@
 
 .editIcon {
     cursor: pointer;
+    width: 12px;
+}
+
+.deleteIcon {
+    cursor: pointer;
+    width: 12px;
+}
+
+.editButtonsContainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 12px;
+    border-top: solid 1px #e5e5e5;
 }
